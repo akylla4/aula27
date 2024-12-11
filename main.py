@@ -1,4 +1,10 @@
 #cadastro de usuário e senha
+#declarar função 
+def valiadar_senha():
+     senha_validar = input ("deigite sua senha")
+     if senha_validar == senha : 
+          return True #RETORNE O VALOR 
+
 saldo = 0.0 #variavel que guardara o saldo do usuario 
 while True:
     #menu principal 
@@ -28,30 +34,28 @@ while True:
                       saldo = saldo + valor_deposito #atualizar o valor 
                  elif  escolha_principal == 2: #saque 
                       valor_saque = float (input("diite o valor do saque"))
-                      senha_saque = input ("digite sua senha:")
-                      if senha_saque == senha:
+                      if valiadar_senha (): 
                            saldo = saldo - valor_saque #subtrai o valor do saldo  
                       else: 
                         print("sanha incorreta")
                  elif escolha_principal == 3:
                       valor_pix = float (input("digite o valor do pix"))
-                      senha_pix = input ("digite sua senha")
-                      if senha_pix == senha:
+                     
+                      if valiadar_senha():
                            saldo = saldo - valor_pix
-        else : 
-            print ("USUÁRIO OU SENHA INCORRETOS")
-    elif escolha_principal == 4: #se usuário escolher visualizar 
-         senha_extrato=input("digite sua senha")
-         if senha_extrato == senha:
-             print("extato:",saldo)
-         else: 
-             print ("senha incorreta")
-    elif escolha_principal == 5: #encerrar 
-           senha_encerrar = input ("digite sua senha")
-           if senha_encerrar == senha:
-                break 
-           else: 
-                print ("senha incorreta")
+                      else : 
+                              print ("USUÁRIO OU SENHA INCORRETOS")
+                 elif escolha_principal == 4: #se usuário escolher visualiz senha_extrato=input("digite sua senha")
+                         if valiadar_senha:
+                              print("extato:",saldo)
+                         else: 
+                              print ("senha incorreta")
+                 elif escolha_principal == 5: #encerrar 
+                              senha_encerrar = input ("digite sua senha")
+                              if senha_encerrar == senha:
+                                   break 
+                              else: 
+                                   print ("senha incorreta")
     else:
          print("usuario ou senha incorretos")
 
